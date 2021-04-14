@@ -1,7 +1,13 @@
 import "./App.sass";
+import TopBar from "./components/TopBar";
+import LoginForm from "./components/LoginForm";
 
 function App() {
-  return <div className="App">app</div>;
+  return (
+    <div className="App">
+      <LoginForm />
+    </div>
+  );
 }
 
 export default App;
