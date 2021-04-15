@@ -1,0 +1,71 @@
+.page
+	&__content
+		.movies-cateogories
+			font-family: 'Nunito', sans-serif
+			.categories-container
+				.categories
+					&__title
+						font-family: 'Sora', sans-serif
+						&--toggler 
+							top: 0
+							right: 0
+					.caterory__list
+						// font-family: 'Nunito', sans-serif
+						height: 100%
+						max-height: 0
+						overflow: hidden
+						transition: .3s
+						@media (min-width: 768px)
+							max-height: 380px
+						&--open
+							max-height: 380px
+						&--item
+							cursor: pointer
+							background-color: #F2EFE9
+							margin-bottom: .5rem
+							font-size: 18px
+							border-left: 5px solid #2A2859
+							padding: .3rem .8rem
+			.movies-container
+				.movies
+					&__title
+						font-family: 'Sora', sans-serif
+					&__search
+						input
+							width: 100%
+							border: 1px solid #2A2859
+							margin-bottom: 1rem
+							font-size: 18px
+							padding: .3rem .6rem
+							outline: none
+					&__list
+						&--item
+							background-color: #F2EFE9
+							padding: 1rem .8rem
+							margin-bottom: 1rem	
+							border-left: 5px solid #2A2859
+							.title
+								font-family: 'Sora', sans-serif
+								font-weight: 700
+							.cover
+							.story
+								margin-top: 1rem
+								&__content
+									height: 100%
+									max-height: 0
+									overflow: hidden
+									transition: .3s
+									margin-bottom: 0
+									&.show
+										max-height: 280px
+							.video
+								&__trailer
+									width: 100%
+									max-height: 0
+									transition: .3s, opacity .3s .3s
+									opacity: 0
+									&.show
+										max-height: 200px
+										width: 100%
+										height: auto
+										opacity: 1

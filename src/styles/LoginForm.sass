@@ -2,6 +2,40 @@
 	height: 100vh
 	width: 100%
 	background-color: #fff
+	font-family: 'Nunito', sans-serif
 	.login-form-container 
 		height: 100%
 		width: 100%
+		form
+			display: flex
+			flex-direction: column
+			width: 100%
+			position: relative
+			input,
+			button
+				width: 90%
+				margin: .5rem auto
+				border: 1px solid #2A2859
+				outline: none
+				font-size: 20px
+				padding: .4rem 1rem
+				@media (min-width: 400px) 
+					width: 300px
+				&.error 
+					border-color: #d60000
+			button
+				text-transform: uppercase
+				background-color: #2A2859
+				color: #F2EFE9
+				transition: .3s
+				&:hover
+					background-color: #181126
+					color: #F2EFE9
+					border-color: #181126
+			.login-loading, .login-error
+				position: absolute
+				top: 100%
+				left: 50%
+				transform: translateX(-50%)
+			.login-error
+				font-size: 16px

@@ -8,7 +8,7 @@ const Category = ({ category }) => {
   };
   return (
     <div
-      className="caterory__item"
+      className="caterory__list--item"
       onClick={(e) => handleClick(e, category.id)}
     >
       {category.name}

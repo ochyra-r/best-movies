@@ -5,6 +5,7 @@ import { setCategory } from "../features/categorySlice";
 
 const Categories = () => {
   const [catogories, setCategories] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,14 +25,33 @@ const Categories = () => {
     dispatch(setCategory(null));
   };
 
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="categories">
-      <div className="caterory__item" onClick={resetCategory}>
-        All
+      <h3 className="position-relative categories__title">
+        Categories
+        <span
+          className="categories__title--toggler position-absolute d-md-none"
+          onClick={handleOpen}
+        >
+          {isOpen ? "-" : "+"}
+        </span>
+      </h3>
+      <div
+        className={
+          isOpen ? "caterory__list caterory__list--open" : "caterory__list"
+        }
+      >
+        <div className="caterory__list--item" onClick={resetCategory}>
+          All
+        </div>
+        {catogories.map((category, id) => (
+          <Category key={id} category={category} />
+        ))}
       </div>
-      {catogories.map((category, id) => (
-        <Category key={id} category={category} />
-      ))}
     </div>
   );
 };

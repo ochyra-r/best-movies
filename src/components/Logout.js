@@ -26,9 +26,7 @@ const Logout = () => {
           dispatch(logout());
         }
       })
-      .catch((error) => {
-        // console.log(error);
-      });
+      .catch((error) => {});
 
     dispatch(logout());
   };

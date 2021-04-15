@@ -3,10 +3,17 @@ import { getUser } from "../features/userSlice";
 
 const User = () => {
   const user = useSelector(getUser);
-  console.log(user);
   return (
-    <div className="user">
-      <img src={user.avatar} alt="" />
+    <div className="user d-flex flex-column flex-sm-row">
+      <div className="img mr-3 mb-2">
+        <img src={user.avatar} alt="" />
+      </div>
+      <div className="info">
+        <p className="name">{user.name}</p>
+        <p className="desc d-none d-sm-block">
+          <span>@{user.username}</span> | <span>{user.event}</span>
+        </p>
+      </div>
     </div>
   );
 };

@@ -41,17 +41,21 @@ const Movies = () => {
   });
 
   return (
-    <div className="movies">
+    <div className="movies mt-3 mt-md-0">
+      <h3 className="movies__title">Movies</h3>
       <div className="movies__search">
         <input
           type="text"
           value={search}
+          placeholder="Search movie"
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      {moviesToDisplay.map((movie, id) => (
-        <Movie key={id} movie={movie} />
-      ))}
+      <div className="movies__list">
+        {moviesToDisplay.map((movie, id) => (
+          <Movie key={id} movie={movie} id={id} />
+        ))}
+      </div>
     </div>
   );
 };

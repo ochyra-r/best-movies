@@ -6,11 +6,11 @@ const TopBar = () => {
   return (
     <div className="container-fluid topbar">
       <div className="container">
-        <div className="row">
-          <div className="col-6">
+        <div className="row position-relative">
+          <div className="col-12">
             <User />
           </div>
-          <div className="col-6">
+          <div className="logout-btn-container">
             <Logout />
           </div>
         </div>
