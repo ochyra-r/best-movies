@@ -48,31 +48,30 @@ const LoginForm = () => {
       })
       .catch((error) => {
         setIsLoading(false);
+        setError("Service Unavailable. Failed to fetch");
       });
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col d-flex flex-column justify-content-center align-items-center login-form-container">
-          <form onSubmit={(e) => handleSubmit(e)}>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUserame(e.target.value)}
-              placeholder="login"
-            />
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="password"
-            />
-            <button type="submit">Log in</button>
-          </form>
-          {isLoading && <p>loadnig</p>}
-          {error && <p>{error}</p>}
-        </div>
+    <div className="login-form-body">
+      <div className="col d-flex flex-column justify-content-center align-items-center login-form-container">
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUserame(e.target.value)}
+            placeholder="login"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="password"
+          />
+          <button type="submit">Log in</button>
+        </form>
+        {isLoading && <p>loadnig</p>}
+        {error && <p>{error}</p>}
       </div>
     </div>
   );

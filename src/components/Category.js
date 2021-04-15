@@ -7,7 +7,10 @@ const Category = ({ category }) => {
     dispatch(setCategory(id));
   };
   return (
-    <div className="col-12" onClick={(e) => handleClick(e, category.id)}>
+    <div
+      className="caterory__item"
+      onClick={(e) => handleClick(e, category.id)}
+    >
       {category.name}
     </div>
   );

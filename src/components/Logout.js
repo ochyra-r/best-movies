@@ -34,12 +34,8 @@ const Logout = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <button onClick={(e) => handleLogout(e)}>Log out</button>
-        </div>
-      </div>
+    <div className="logout">
+      <button onClick={(e) => handleLogout(e)}>Log out</button>
     </div>
   );
 };

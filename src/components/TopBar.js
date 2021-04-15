@@ -1,14 +1,17 @@
 import "../styles/TopBar.sass";
 import User from "./User";
+import Logout from "./Logout";
 
 const TopBar = () => {
   return (
     <div className="container-fluid topbar">
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col-6">
             <User />
-            <div className="log_btn">Login</div>
+          </div>
+          <div className="col-6">
+            <Logout />
           </div>
         </div>
       </div>
