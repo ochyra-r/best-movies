@@ -1,4 +1,5 @@
 .page
+	margin-bottom: 4rem
 	&__content
 		.movies-cateogories
 			font-family: 'Nunito', sans-serif
@@ -26,6 +27,12 @@
 							font-size: 18px
 							border-left: 5px solid #2A2859
 							padding: .3rem .8rem
+							transition: .2s
+							&.active 
+								border-left: 8px solid rgb(69, 199, 73)
+								box-shadow: 0px 2px 2px rgba(69, 199, 73, 0.5)
+							&:hover
+								box-shadow: 0px 2px 2px rgba(42, 40, 89, 0.5)
 			.movies-container
 				.movies
 					&__title
@@ -40,32 +47,49 @@
 							outline: none
 					&__list
 						&--item
+							position: relative
 							background-color: #F2EFE9
 							padding: 1rem .8rem
 							margin-bottom: 1rem	
 							border-left: 5px solid #2A2859
+							transition: .3s
+							&:hover
+								box-shadow: 6px 6px 6px rgba(42, 40, 89, 0.5), -2px -2px 6px rgba(42, 40, 89, 0.5)
 							.title
 								font-family: 'Sora', sans-serif
 								font-weight: 700
-							.cover
-							.story
-								margin-top: 1rem
-								&__content
-									height: 100%
-									max-height: 0
-									overflow: hidden
-									transition: .3s
-									margin-bottom: 0
-									&.show
-										max-height: 280px
+								cursor: default
+							.cover-story
+								.cover
+									@media (min-width: 992px)
+										float: left
+										margin-right: 2rem
+										margin-bottom: 1rem
+								.story
+									margin-top: 1rem
+									cursor: default
+									@media (min-width: 992px)
+										margin-top: 0
+									&__content
+										display: none
+										&.show
+											display: block
+									@media (min-width: 992px) 
+										.story__toggler
+											display: none
+										.story__content
+											font-size: 18px
+											display: block
 							.video
-								&__trailer
-									width: 100%
-									max-height: 0
-									transition: .3s, opacity .3s .3s
-									opacity: 0
-									&.show
-										max-height: 200px
-										width: 100%
-										height: auto
-										opacity: 1
+								&__toggler
+									cursor: pointer
+								@media (min-width: 992px) 
+									position: absolute
+									top: 1rem
+									right: 1rem
+							.video__trailer
+								width: 100%
+								height: auto
+								display: none
+								&.show
+									display: block

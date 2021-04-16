@@ -4,8 +4,8 @@ import Logout from "./Logout";
 
 const TopBar = () => {
   return (
-    <div className="container-fluid topbar">
-      <div className="container">
+    <div className="container-fluid topbar p-0">
+      <div className="container py-3">
         <div className="row position-relative">
           <div className="col-12">
             <User />
